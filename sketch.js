@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(600, 600); //კვადრატია, სადაც ხდება ყველაფერი
-  particle = new particle(100, 100); //თავიდანვე წრეს კორდინატები
+  particle = new particle(100, 100); //თავიდანვე წრეს კოორდინატები
 }
 
 function draw() {
@@ -13,7 +13,7 @@ function particle(x, y) {
   this.x = x; 
   this.y = y; //ფუნკცია იღებს თავიდანვე მითითებილი კოორდინატები
 
-  this.history = []; //მასივია, სადაც ინახება პატარა წრეები.
+  this.history = []; //მასივია, სადაც ინახება დიდი წრის ძველი კოორდინატები.
 
   this.update = function() {
     this.x += random(-15, 15);
@@ -28,7 +28,7 @@ function particle(x, y) {
   }
 
   this.show = function() {
-    stroke(0);
+    stroke(0); 
     fill(0, 150);
     ellipse(this.x, this.y, 24, 24); //დიდი წრის პოზიცია და ზომა
 
